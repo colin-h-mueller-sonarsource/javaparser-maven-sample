@@ -38,7 +38,7 @@ public class LogicPositivizer {
              */
             @Override
             public Visitable visit(IfStmt n, Void arg) {
-                // Figure out what to get and what to cast simply by looking at the AST in a debugger! !
+                // Figure out what to get and what to cast simply by looking at the AST in a debugger!! !
                 n.getCondition().ifBinaryExpr(binaryExpr -> {
                     if (binaryExpr.getOperator() == BinaryExpr.Operator.NOT_EQUALS && n.getElseStmt().isPresent()) {
                         /* It's a good idea to clone nodes that you move around.
